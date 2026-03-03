@@ -170,7 +170,7 @@ const PROJECT_POSTS = [
             <h3 className="text-xl md:text-2xl font-bold text-white">B2B CRM System</h3>
             <p className="text-indigo-400 font-medium text-[13px] md:text-sm mt-1">Fullstack Internal Business Tool</p>
           </div>
-          <a href="https://linkedin.com/" target="_blank" rel="noreferrer" className="inline-flex items-center mt-2 sm:mt-3 justify-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors text-[13px] md:text-sm font-medium shadow-lg shadow-blue-900/20 w-full sm:w-auto">
+          <a href="https://www.linkedin.com/in/mayuracharya123/" target="_blank" rel="noreferrer" className="inline-flex items-center mt-2 sm:mt-3 justify-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors text-[13px] md:text-sm font-medium shadow-lg shadow-blue-900/20 w-full sm:w-auto">
             <Linkedin size={16} /> DM for Live Demo
           </a>
         </div>
@@ -299,10 +299,10 @@ const App: React.FC = () => {
           <div className="hidden sm:flex gap-6 text-sm font-medium text-slate-300">
             <a href="#about" className="hover:text-blue-400 transition-colors">My Portfolio</a>
             <a href="#projects" className="hover:text-blue-400 transition-colors">Projects</a>
-            <a href="https://github.com/" target="_blank" rel="noreferrer" className="hover:text-white transition-colors flex items-center gap-1">
+            <a href="https://github.com/mayur123ac" target="_blank" rel="noreferrer" className="hover:text-white transition-colors flex items-center gap-1">
               <Github size={16} /> GitHub
             </a>
-            <a href="https://linkedin.com/" target="_blank" rel="noreferrer" className="hover:text-blue-500 transition-colors flex items-center gap-1">
+            <a href="https://www.linkedin.com/in/mayuracharya123/" target="_blank" rel="noreferrer" className="hover:text-blue-500 transition-colors flex items-center gap-1">
               <Linkedin size={16} /> LinkedIn
             </a>
           </div>
@@ -319,10 +319,10 @@ const App: React.FC = () => {
           <a href="#projects" className="flex flex-col items-center gap-1 hover:text-blue-400 transition-colors">
             <MonitorPlay size={16}/> Projects
           </a>
-          <a href="https://github.com/" target="_blank" rel="noreferrer" className="flex flex-col items-center gap-1 hover:text-white transition-colors">
+          <a href="https://github.com/mayur123ac" target="_blank" rel="noreferrer" className="flex flex-col items-center gap-1 hover:text-white transition-colors">
             <Github size={16} /> GitHub
           </a>
-          <a href="https://linkedin.com/" target="_blank" rel="noreferrer" className="flex flex-col items-center gap-1 hover:text-blue-500 transition-colors">
+          <a href="https://www.linkedin.com/in/mayuracharya123/" target="_blank" rel="noreferrer" className="flex flex-col items-center gap-1 hover:text-blue-500 transition-colors">
             <Linkedin size={16} /> LinkedIn
           </a>
         </div>
@@ -582,7 +582,7 @@ const App: React.FC = () => {
             
             {/* GitHub Card */}
             <a 
-              href="https://github.com/your-github-username" 
+              href="https://github.com/mayur123ac" 
               target="_blank" 
               rel="noreferrer" 
               className="group block bg-slate-900/50 border border-slate-800 hover:border-slate-600 p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-lg transition-all hover:bg-slate-800/50"
