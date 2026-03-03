@@ -2,8 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { 
   Github, Linkedin, MessageCircle, ExternalLink, BookOpen, 
   MonitorPlay, Users, Layout, BrainCircuit, Cloud, Code2, 
-  GraduationCap, Target, Image as ImageIcon,
-  ThumbsUp, MessageSquare, Share2, Send, ChevronLeft, ChevronRight, X, ArrowRight
+  GraduationCap, Target, ChevronLeft, ChevronRight, X, ArrowRight
 } from 'lucide-react';
 
 import type { ReactNode } from 'react';
@@ -423,7 +422,7 @@ const App: React.FC = () => {
               <Layout size={18} className="text-blue-400"/> Skills
             </h3>
             <div className="flex flex-wrap gap-1.5 md:gap-2">
-              {['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'MERN Stack', 'Node.js', 'Express.js','Agile Methodology', 'GitHub'].map(s => (
+              {['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'MERN Stack', 'Node.js', 'Express.js','Agile Methodology', 'GitHub', 'MongoDB'].map(s => (
                 <span key={s} className="px-2 md:px-3 py-1 bg-slate-800 rounded-md text-[11px] md:text-sm text-slate-300 border border-slate-700">{s}</span>
               ))}
             </div>
