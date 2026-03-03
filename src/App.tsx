@@ -546,7 +546,7 @@ const App: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 relative z-10">
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-white flex items-center gap-2 md:gap-3">
-                  <Target className="text-emerald-500" size={24}/> Aspiring Product Manager
+                  <Target className="text-emerald-500" size={24}/> Aspiring Project Manager
                 </h2>
                 <p className="text-[13px] md:text-lg text-slate-300 mb-4 md:mb-6">
                   My dream is to transition into a PM role where I can utilize my technical background to make strategic product decisions. I am actively expanding my skill set to bridge development and business needs.
