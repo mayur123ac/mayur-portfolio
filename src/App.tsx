@@ -47,7 +47,7 @@ const Reveal: React.FC<RevealProps> = ({ children, delay = 0, className = "" }) 
   );
 };
 
-// 2. 360-Degree Spin Reveal - Now animates every time!
+// 2. 90-Degree Spin Reveal - Triggers only once!
 const SpinReveal: React.FC<RevealProps> = ({ children, delay = 0, className = "" }) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -57,11 +57,11 @@ const SpinReveal: React.FC<RevealProps> = ({ children, delay = 0, className = ""
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-        } else {
-          setIsVisible(false); // This resets the animation when you scroll away
+          // Stop observing once it has become visible to ensure it only animates once
+          if (ref.current) observer.unobserve(ref.current);
         }
       },
-      { threshold: 0.3, rootMargin: "0px 0px -30% 0px" } 
+      { threshold: 0.3, rootMargin: "0px 0px -10% 0px" } 
     );
 
     if (ref.current) observer.observe(ref.current);
@@ -74,7 +74,8 @@ const SpinReveal: React.FC<RevealProps> = ({ children, delay = 0, className = ""
       className={`transition-all duration-[1200ms] ease-[cubic-bezier(0.25,0.8,0.25,1)] ${className}`}
       style={{ 
         transitionDelay: isVisible ? `${delay}ms` : '0ms',
-        transform: isVisible ? 'perspective(1000px) rotateY(360deg) translateY(0)' : 'perspective(1000px) rotateY(0deg) translateY(60px)',
+        // transform updated to 90deg for a cleaner entry
+        transform: isVisible ? 'perspective(1000px) rotateY(0deg) translateY(0)' : 'perspective(1000px) rotateY(90deg) translateY(40px)',
         opacity: isVisible ? 1 : 0,
         transformStyle: 'preserve-3d'
       }}
@@ -422,7 +423,7 @@ const App: React.FC = () => {
               <Layout size={18} className="text-blue-400"/> Skills
             </h3>
             <div className="flex flex-wrap gap-1.5 md:gap-2">
-              {['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'MERN Stack', 'Node.js', 'Express.js','Agile Methodology', 'GitHub', 'MongoDB'].map(s => (
+              {['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'MERN Stack', 'Node.js', 'Express.js','Agile Methodology', 'MongoDB'].map(s => (
                 <span key={s} className="px-2 md:px-3 py-1 bg-slate-800 rounded-md text-[11px] md:text-sm text-slate-300 border border-slate-700">{s}</span>
               ))}
             </div>
@@ -435,6 +436,8 @@ const App: React.FC = () => {
             <div className="flex flex-wrap gap-1.5 md:gap-2">
               <span className="px-2 md:px-3 py-1 bg-slate-800 rounded-md text-[11px] md:text-sm text-slate-300 border border-slate-700">AWS S3 Buckets</span>
               <span className="px-2 md:px-3 py-1 bg-slate-800 rounded-md text-[11px] md:text-sm text-slate-300 border border-slate-700">Blogger Site</span>
+              <span className="px-2 md:px-3 py-1 bg-slate-800 rounded-md text-[11px] md:text-sm text-slate-300 border border-slate-700">GitHub</span>
+
             </div>
           </SpinReveal>
 
@@ -478,6 +481,7 @@ const App: React.FC = () => {
               <li><strong className="text-slate-200">ChatGPT:</strong> Business research</li>
               <li><strong className="text-slate-200">Claude AI:</strong> Building project logic</li>
               <li><strong className="text-slate-200">WixStudio / Figma:</strong> UI/UX Design</li>
+              <li><strong className="text-slate-200">Video Converter:</strong> ffmpeg & HLS</li>
             </ul>
           </SpinReveal>
 
