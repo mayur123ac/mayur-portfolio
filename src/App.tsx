@@ -357,7 +357,7 @@ const App: React.FC = () => {
             </p>
             
             <p className="mb-3 md:mb-4">
-              This blend of technical execution and team leadership sparked my active pursuit of a Product Management (PM) role. I am continuously expanding my business acumen through LinkedIn Learning PM courses, combining my IT expertise with strategic problem-solving to bridge the gap between engineering complexities and real-world business needs.
+              This blend of technical execution and team leadership sparked my active pursuit of a Project Management (PM) role. I am continuously expanding my business acumen through LinkedIn Learning PM courses, combining my IT expertise with strategic problem-solving to bridge the gap between engineering complexities and real-world business needs.
             </p>
             
             <p className="font-semibold text-blue-300">
