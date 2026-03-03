@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { 
   Github, Linkedin, MessageCircle, ExternalLink, BookOpen, 
   MonitorPlay, Users, Layout, BrainCircuit, Cloud, Code2, 
-  GraduationCap, Target, ChevronLeft, ChevronRight, X, ArrowRight
+  GraduationCap, Target, ChevronLeft, ChevronRight, X, ArrowRight,
+  Trophy, Briefcase, FileText, Download
 } from 'lucide-react';
 
 import type { ReactNode } from 'react';
@@ -57,9 +58,10 @@ const SpinReveal: React.FC<RevealProps> = ({ children, delay = 0, className = ""
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
+        }else{
+          setIsVisible(false);
+          }
           // Stop observing once it has become visible to ensure it only animates once
-          if (ref.current) observer.unobserve(ref.current);
-        }
       },
       { threshold: 0.3, rootMargin: "0px 0px -10% 0px" } 
     );
@@ -71,7 +73,7 @@ const SpinReveal: React.FC<RevealProps> = ({ children, delay = 0, className = ""
   return (
     <div 
       ref={ref} 
-      className={`transition-all duration-[1200ms] ease-[cubic-bezier(0.25,0.8,0.25,1)] ${className}`}
+      className={`transition-all duration-[1100ms] ease-[cubic-bezier(0.25,0.8,0.25,1)] ${className}`}
       style={{ 
         transitionDelay: isVisible ? `${delay}ms` : '0ms',
         // transform updated to 90deg for a cleaner entry
@@ -300,6 +302,8 @@ const App: React.FC = () => {
           <div className="hidden sm:flex gap-6 text-sm font-medium text-slate-300">
             <a href="#about" className="hover:text-blue-400 transition-colors">My Portfolio</a>
             <a href="#projects" className="hover:text-blue-400 transition-colors">Projects</a>
+            <a href="#achievements" className="hover:text-blue-400 transition-colors">Achievements</a>
+            
             <a href="https://github.com/mayur123ac" target="_blank" rel="noreferrer" className="hover:text-white transition-colors flex items-center gap-1">
               <Github size={16} /> GitHub
             </a>
@@ -319,6 +323,9 @@ const App: React.FC = () => {
           </a>
           <a href="#projects" className="flex flex-col items-center gap-1 hover:text-blue-400 transition-colors">
             <MonitorPlay size={16}/> Projects
+          </a>
+          <a href="#achievements" className="flex flex-col items-center gap-1 hover:text-blue-400 transition-colors">
+            <Trophy size={16}/> Achievements
           </a>
           <a href="https://github.com/mayur123ac" target="_blank" rel="noreferrer" className="flex flex-col items-center gap-1 hover:text-white transition-colors">
             <Github size={16} /> GitHub
@@ -488,7 +495,7 @@ const App: React.FC = () => {
         </div>
 
         {/* --- PROJECTS PORTFOLIO (LINKEDIN STYLE) --- */}
-        <div id="projects" className="pt-4 md:pt-8 mb-6 md:mb-8">
+        <div id="projects" className="pt-4 md:pt-8 mb-6 md:mb-6">
           <Reveal>
             <h2 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-2 md:gap-3 justify-center md:justify-start">
               <MonitorPlay className="text-rose-500" size={28}/> Projects Built
@@ -541,6 +548,70 @@ const App: React.FC = () => {
             </Reveal>
           ))}
         </div>
+                {/* --- RESUME SECTION --- */}
+        <Reveal>
+          <div className="bg-slate-900/50 border border-slate-800 p-6 md:p-10 rounded-2xl md:rounded-[2.5rem] mb-16 relative overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white flex items-center gap-3"><FileText className="text-blue-500" /> Resume</h2>
+                <p className="text-[13px] md:text-lg text-slate-300 mb-6">Explore my professional background, skills, and detailed experience. View or download my latest resume below.</p>
+                <div className="flex flex-wrap gap-4">
+                  <a href="/resume.pdf" target="_blank" className="flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-full font-bold transition-all text-sm"><MonitorPlay size={18} /> View Resume</a>
+                  <a href="/resume.pdf" download className="flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-full font-bold transition-all text-sm border border-slate-700"><Download size={18} /> Download</a>
+                </div>
+              </div>
+              <div className="hidden md:block">
+                <div className="bg-slate-800/80 border border-slate-700 p-2 rounded-xl aspect-[3/4] overflow-hidden group cursor-pointer" onClick={() => window.open('/resume.png', '_blank')}>
+                  <img src="/resume.png" alt="Resume Preview" className="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-500" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* --- ACHIEVEMENTS SECTION --- */}
+        <div id="achievements" className="pt-4 mb-6 md:mb-8">
+          <Reveal><h2 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-3"><Trophy className="text-yellow-500" size={28}/> Achievements & Experience</h2></Reveal>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+          <Reveal delay={100} className="h-full">
+            <div className="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl h-full flex flex-col">
+              <div className="flex justify-between items-start mb-4">
+                <div className="p-3 bg-blue-900/20 rounded-xl text-blue-500"><Briefcase size={24} /></div>
+                <div className="bg-emerald-500/20 text-emerald-400 text-[10px] font-bold px-2 py-1 rounded">5 STAR RATED</div>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-1">Web Development Internship</h3>
+              <p className="text-blue-400 text-sm mb-3">Levaze Digital • Apr 22 - Jun 10, 2024</p>
+              <p className="text-slate-400 text-sm mb-4 flex-grow">Led a project to a perfect 5-star score, building a sophisticated Book Management Website. Honed skills in high-pressure technical execution and team collaboration.</p>
+              
+              {/* FIX: Removed h-80, added h-auto and object-contain to show full image */}
+              <div className="cursor-pointer overflow-hidden rounded-xl border border-slate-700 bg-slate-800/50 flex items-center justify-center mt-auto" onClick={() => window.open('/internship-cert.jpg', '_blank')}>
+                <img src="/intern.jpg" alt="Internship Certificate" className="w-full h-full object-contain hover:scale-105 transition-transform duration-500" />
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal delay={200} className="h-full">
+            <div className="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl h-full flex flex-col">
+              <div className="flex justify-between items-start mb-4">
+                <div className="p-3 bg-yellow-900/20 rounded-xl text-yellow-500"><Trophy size={24} /></div>
+                <div className="bg-yellow-500/20 text-yellow-400 text-[10px] font-bold px-2 py-1 rounded">2ND PLACE</div>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-1">Game Hackathon 2024-25</h3>
+              <p className="text-yellow-500 text-sm mb-3">Vivek College of Commerce</p>
+              <p className="text-slate-400 text-sm mb-4 flex-grow">Secured 2nd place intercollegiate. Developed a space-themed 2D game in an intense 6-hour coding sprint, mastering problem-solving under extreme time constraints.</p>
+              
+              {/* FIX: Removed h-80, added h-auto and object-contain to show full image */}
+              <div className="cursor-pointer overflow-hidden rounded-xl border border-slate-700 bg-slate-800/50 flex items-center justify-center mt-auto" onClick={() => window.open('/hackathon-cert.jpg', '_blank')}>
+                <img src="/hackathon-cert.png" alt="Hackathon Certificate" className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500" />
+              </div>
+            </div>
+          </Reveal>
+
+        </div>
+      </section>
+      <section id="productmanag" className="max-w-6xl mx-auto px-2 md:px-2 pt-0 md:pt-0 pb-10">
 
         {/* --- ASPIRING PM SECTION --- */}
         <Reveal>
@@ -625,7 +696,6 @@ const App: React.FC = () => {
           </div>
         </Reveal>
       </section>
-
       {/* --- ROADMAP / VISION (Triggers Darkest Mode) --- */}
       <section ref={visionRef} className="max-w-4xl mx-auto px-4 md:px-6 py-20 md:py-32 border-t border-slate-800 pb-32 md:pb-32">
         <div className="text-center mb-12 md:mb-16">
